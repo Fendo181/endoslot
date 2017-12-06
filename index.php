@@ -96,7 +96,7 @@ $posts = array_reverse($posts);
             <script src="js/main.js"></script>
             <!-- commets -->
             <div class="comments">
-                <h3>自己申告スコアg</h3>
+                <h3>自己申告でスコアを報告して下さい</h3>
                 <form action="" method="post">
                     <ul>
                         <li>あなたの名前 :
