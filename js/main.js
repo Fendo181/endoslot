@@ -66,7 +66,7 @@
         if (img0.src !== img1.src && img0.src !== img2.src) {
             img0.className = 'unmatched';
             var message = document.getElementById('message');
-            message.innerHTML = "ハズレだね(-1)";
+            message.innerHTML = "ハズレだね";
             //  点数をいれる。
             score --;
             scoreLabel.innerHTML = score;
@@ -74,14 +74,14 @@
         if (img1.src !== img0.src && img1.src !== img2.src) {
             img1.className = 'unmatched';
             var message = document.getElementById('message');
-            message.innerHTML = "ハズレです。人生そんなもんです(-2)";
+            message.innerHTML = "ハズレです。人生そんなもんです";
             score --;
             scoreLabel.innerHTML = score;
         }
         if (img2.src !== img0.src && img2.src !== img1.src) {
             img2.className = 'unmatched';
             var message = document.getElementById('message');
-            message.innerHTML = "ハズレ、超ハズレです(-3)";
+            message.innerHTML = "ハズレ、超ハズレです";
             score --;
             scoreLabel.innerHTML = score;
         }
