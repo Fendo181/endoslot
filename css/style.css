@@ -12,7 +12,12 @@ body {
 #message {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    
+}
+
+.score_message{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #5073e6
 }
 
 .slot{

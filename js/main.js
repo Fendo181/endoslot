@@ -4,7 +4,9 @@
     var panels = document.getElementsByClassName('panel');
     var spin = document.getElementById('spin');
     var spinspeed = 45;
-
+    // score
+    var scoreLabel = document.getElementById('score');
+    let score =0;
     // img array
     var slot_card = [
         'seven.png',
@@ -12,17 +14,16 @@
         'cherry.png',
         'endo.png'
     ];
-    
-    var timers = [];
 
+    var timers = [];
     var stopCount = 0;
 
     function runSlot(n) {
         var message = document.getElementById('message');
         message.innerHTML = "";
         timers[n] = setTimeout(function() {
-            panels[n].children[0].src = 
-            'img/' +  
+            panels[n].children[0].src =
+            'img/' +
             slot_card[Math.floor(Math.random() * slot_card.length)];
             // console.log(n)
             // 再帰
@@ -33,7 +34,7 @@
     function stopPanel(params) {
         var i;
         for (i =0; i < panels.length; i++){
-            panels[i].children[1].addEventListener('click', 
+            panels[i].children[1].addEventListener('click',
             function(){
                 // audio se play
                 document.getElementById('audio').currentTime = 0 ;
@@ -60,20 +61,28 @@
         var img1 = panels[1].children[0];
         var img2 = panels[2].children[0];
 
+
         if (img0.src !== img1.src && img0.src !== img2.src) {
             img0.className = 'unmatched';
             var message = document.getElementById('message');
-            message.innerHTML = "ハズレ";
+            message.innerHTML = "ハズレだね";
+            //  点数をいれる。
+            score --;
+            scoreLabel.innerHTML = score;
         }
         if (img1.src !== img0.src && img1.src !== img2.src) {
             img1.className = 'unmatched';
             var message = document.getElementById('message');
-            message.innerHTML = "ハズレ";
+            message.innerHTML = "ハズレです。";
+            score --;
+            scoreLabel.innerHTML = score;
         }
         if (img2.src !== img0.src && img2.src !== img1.src) {
             img2.className = 'unmatched';
             var message = document.getElementById('message');
-            message.innerHTML = "ハズレ";
+            message.innerHTML = "ハズレ、超ハズレです";
+            score --;
+            scoreLabel.innerHTML = score;
         }
 
         // matchしたら
@@ -84,11 +93,12 @@
 
             console.log(img0.src)
             var re = /(img0.src)/
-            
-            var message = document.getElementById('message');
-            message.innerHTML = "当たり!";
-        }
 
+            var message = document.getElementById('message');
+            message.innerHTML = "当たり!  今日は良い事ありそう！";
+            score = score + 10;
+            scoreLabel.innerHTML = score;
+        }
     }
 
     stopPanel()
