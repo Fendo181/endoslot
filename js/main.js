@@ -7,6 +7,7 @@
     // score
     var scoreLabel = document.getElementById('score');
     let score =0;
+
     // img array
     var slot_card = [
         'seven.png',
@@ -85,7 +86,6 @@
             scoreLabel.innerHTML = score;
         }
 
-        // matchしたら
         if (img0.src == img1.src && img0.src == img2.src) {
             img0.className = 'matched';
             img1.className = 'matched';
