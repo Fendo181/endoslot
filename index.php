@@ -1,6 +1,7 @@
 <?php
 # 書き込みファイル
-$dateFile = 'ranking_debug.dat';
+$dateFile = 'ranking.dat';
+
 
 session_start();
 
